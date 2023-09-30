@@ -21,9 +21,11 @@
   "dependencies": {
     "@fastify/autoload": "^5.7.1",
     "@fastify/sensible": "^5.3.0",
+    "drizzle-orm": "^0.28.6",
     "fastify": "^4.23.2",
     "fastify-cli": "^5.8.0",
-    "fastify-plugin": "^4.5.1"
+    "fastify-plugin": "^4.5.1",
+    "postgres": "^3.3.5"
   },
   "devDependencies": {
     "@types/node": "^20.7.2",
@@ -31,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "concurrently": "^8.2.1",
+    "drizzle-kit": "^0.19.13",
     "eslint": "^8.50.0",
     "fastify-tsconfig": "^2.0.0",
     "husky": "^8.0.3",
