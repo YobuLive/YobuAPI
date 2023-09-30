@@ -12,25 +12,38 @@
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
     "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
-    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js"
+    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.23.2",
-    "fastify-plugin": "^4.5.1",
     "@fastify/autoload": "^5.7.1",
     "@fastify/sensible": "^5.3.0",
-    "fastify-cli": "^5.8.0"
+    "fastify": "^4.23.2",
+    "fastify-cli": "^5.8.0",
+    "fastify-plugin": "^4.5.1"
   },
   "devDependencies": {
     "@types/node": "^20.7.2",
     "@types/tap": "^15.0.9",
-    "ts-node": "^10.9.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
     "concurrently": "^8.2.1",
+    "eslint": "^8.50.0",
     "fastify-tsconfig": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "3.0.3",
     "tap": "^18.4.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
